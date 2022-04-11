@@ -9,9 +9,9 @@ import ListItemIcon from "@mui/material/ListItemIcon";
 import ListItemText from "@mui/material/ListItemText";
 import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
-import MenuBar from "./MenuBar";
-import RightSideDrawer from "./RightSideDrawer";
-import WorkOrderLines from "./WorkOrderLines";
+import MenuBar from "./workorder/header/Header";
+import WorkOrderDrawer from "./workorder/WorkOrderDrawer";
+import WorkOrderLines from "./workorder/WorkOrderLines";
 import {
   BuildOutlined,
   DashboardOutlined,
@@ -19,9 +19,9 @@ import {
   EventOutlined,
   PersonOutline
 } from "@mui/icons-material";
-import ApplicationSettings from "./ApplicationSettings";
-import { ApplicationContext } from "./ApplicationContext";
-import OrderLines from "./OrderLines";
+import ApplicationSettings from "./global/ApplicationSettings";
+import { ApplicationContext } from "./global/ApplicationContext";
+import OrderLines from "./workorder/OrderLines";
 
 const drawerWidth = 200;
 
@@ -139,7 +139,7 @@ function ResponsiveDrawer(props) {
         <Toolbar />
         <Drawer anchor="right" open={rightDrawerOpen} variant="persistent">
           <Toolbar />
-          <RightSideDrawer />
+          <WorkOrderDrawer />
         </Drawer>
         <MenuBar
           toggleDrawer={() => {

@@ -21,7 +21,7 @@ import {
 } from "@mui/material";
 import { Close, ZoomIn } from "@mui/icons-material";
 import DatePicker from "@mui/lab/DatePicker";
-import FeedbackDialog from "./FeedbackDialog";
+import FeedbackDialog from "../global/shared/FeedbackDialog";
 import { useSnackbar } from "notistack";
 
 interface InvoiceProps {

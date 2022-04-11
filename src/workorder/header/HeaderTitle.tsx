@@ -1,6 +1,6 @@
 import * as React from "react";
 import { Breadcrumbs, Link, Typography } from "@mui/material";
-import { ApplicationContext } from "./ApplicationContext";
+import { ApplicationContext } from "../../global/ApplicationContext";
 
 function HeaderTitle() {
   const settings = React.useContext(ApplicationContext);

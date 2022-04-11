@@ -17,9 +17,9 @@ import {
 import DeleteForeverIcon from "@mui/icons-material/DeleteForever";
 import CloseIcon from "@mui/icons-material/Close";
 import { useSnackbar } from "notistack";
-import FeedbackDialog from "./FeedbackDialog";
+import FeedbackDialog from "../global/shared/FeedbackDialog";
 
-interface OrderOverviewDialogProps {
+interface OverviewDialogProps {
   onClose: () => void;
   open: boolean;
   actionOne?: () => void;
@@ -32,7 +32,7 @@ interface Line {
   divider?: boolean;
 }
 
-const OrderOverviewDialog: React.FC<OrderOverviewDialogProps> = (props) => {
+const OverviewDialog: React.FC<OverviewDialogProps> = (props) => {
   const { onClose, open, actionTwo } = props;
   const [feedbackModalOpen, setFeedbackModalOpen] = React.useState(false);
   const { enqueueSnackbar } = useSnackbar();
@@ -149,4 +149,4 @@ const OrderOverviewDialog: React.FC<OrderOverviewDialogProps> = (props) => {
   );
 };
 
-export default OrderOverviewDialog;
+export default OverviewDialog;

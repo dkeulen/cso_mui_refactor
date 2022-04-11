@@ -20,18 +20,18 @@ import {
   MenuItem
 } from "@mui/material";
 import { SelectChangeEvent } from "@mui/material/Select";
-import { ApplicationContext } from "./ApplicationContext";
+import { ApplicationContext } from "../global/ApplicationContext";
 import CloseIcon from "@mui/icons-material/Close";
 import OrderLines from "./OrderLines";
 import WorkOrderLines from "./WorkOrderLines";
 import { useSnackbar } from "notistack";
 
-interface CompleteOrderDialogProps {
+interface CompleteDialogProps {
   onClose: () => void;
   open: boolean;
 }
 
-const CompleteOrderDialog: React.FC<CompleteOrderDialogProps> = (props) => {
+const CompleteDialog: React.FC<CompleteDialogProps> = (props) => {
   const { onClose, open } = props;
   const { enqueueSnackbar } = useSnackbar();
   const settings = React.useContext(ApplicationContext);
@@ -192,4 +192,4 @@ const CompleteOrderDialog: React.FC<CompleteOrderDialogProps> = (props) => {
   );
 };
 
-export default CompleteOrderDialog;
+export default CompleteDialog;

@@ -23,15 +23,13 @@ import {
   Tooltip,
   TextField
 } from "@mui/material";
-import OrderOverviewDialog from "./OrderOverviewDialog";
-import CompleteOrderDialog from "./CompleteOrderDialog";
+import OverviewDialog from "./OverviewDialog";
+import CompleteDialog from "./CompleteDialog";
 import Invoice from "./Invoice";
 
 function TotalsInfo() {
   const [modalOpen, setModalOpen] = React.useState(false);
-  const [CompleteOrderModalOpen, setCompleteOrderModalOpen] = React.useState(
-    false
-  );
+  const [CompleteModalOpen, setCompleteModalOpen] = React.useState(false);
   const [invoiceOpen, setInvoiceOpen] = React.useState(false);
 
   const handleModalOpen = () => {
@@ -42,17 +40,17 @@ function TotalsInfo() {
     setModalOpen(false);
   };
 
-  const handleCompleteOrderModalOpen = () => {
-    setCompleteOrderModalOpen(true);
+  const handleCompleteModalOpen = () => {
+    setCompleteModalOpen(true);
   };
 
-  const handleCompleteOrderModalClose = () => {
-    setCompleteOrderModalOpen(false);
+  const handleCompleteModalClose = () => {
+    setCompleteModalOpen(false);
   };
 
-  const handleOverviewToCompleteOrderModal = () => {
+  const handleOverviewToCompleteModal = () => {
     setModalOpen(false);
-    setCompleteOrderModalOpen(true);
+    setCompleteModalOpen(true);
   };
 
   const handleInvoiceOpen = () => {
@@ -84,7 +82,7 @@ function TotalsInfo() {
             startIcon={<ShoppingBasket />}
             variant="contained"
             sx={{ mb: 1 }}
-            onClick={handleCompleteOrderModalOpen}
+            onClick={handleCompleteModalOpen}
           >
             Order parts
             <Chip color="secondary" label="1" size="small" sx={{ ml: 1 }} />
@@ -105,14 +103,14 @@ function TotalsInfo() {
         </CardContent>
       </Card>
 
-      <OrderOverviewDialog
+      <OverviewDialog
         open={modalOpen}
         onClose={handleModalClose}
-        actionTwo={handleOverviewToCompleteOrderModal}
+        actionTwo={handleOverviewToCompleteModal}
       />
-      <CompleteOrderDialog
-        open={CompleteOrderModalOpen}
-        onClose={handleCompleteOrderModalClose}
+      <CompleteDialog
+        open={CompleteModalOpen}
+        onClose={handleCompleteModalClose}
       />
       <Invoice open={invoiceOpen} onClose={handleInvoiceClose} />
     </>
@@ -231,7 +229,7 @@ function AccountInfo() {
   );
 }
 
-export default function RightSideDrawer() {
+export default function WorkOrderDrawer() {
   return (
     <Box sx={{ p: 2, width: 400 }}>
       <Box sx={{ mb: 2 }}>

@@ -25,7 +25,7 @@ import {
 import { useState } from "react";
 import ActionButton from "./ActionButton";
 import HeaderTitle from "./HeaderTitle";
-import CompleteOrderDialog from "./CompleteOrderDialog";
+import CompleteDialog from "../CompleteDialog";
 
 function TooltipText() {
   return (
@@ -53,18 +53,16 @@ function TooltipText() {
   );
 }
 
-export default function MenuBar({ toggleDrawer, showSummary }) {
+export default function Header({ toggleDrawer, showSummary }) {
   const [tooltipOpen, setTooltipOpen] = useState(false);
-  const [CompleteOrderModalOpen, setCompleteOrderModalOpen] = React.useState(
-    false
-  );
+  const [CompleteModalOpen, setCompleteModalOpen] = React.useState(false);
 
-  const handleCompleteOrderModalOpen = () => {
-    setCompleteOrderModalOpen(true);
+  const handleCompleteModalOpen = () => {
+    setCompleteModalOpen(true);
   };
 
-  const handleCompleteOrderModalClose = () => {
-    setCompleteOrderModalOpen(false);
+  const handleCompleteModalClose = () => {
+    setCompleteModalOpen(false);
   };
 
   return (
@@ -173,7 +171,7 @@ export default function MenuBar({ toggleDrawer, showSummary }) {
                 icon={<ShoppingBasket />}
                 buttonText="Order Parts"
                 badge={1}
-                onClick={handleCompleteOrderModalOpen}
+                onClick={handleCompleteModalOpen}
               />
               <ActionButton
                 visibility={showSummary}
@@ -208,9 +206,9 @@ export default function MenuBar({ toggleDrawer, showSummary }) {
           </Grid>
         </Toolbar>
       </AppBar>
-      <CompleteOrderDialog
-        open={CompleteOrderModalOpen}
-        onClose={handleCompleteOrderModalClose}
+      <CompleteDialog
+        open={CompleteModalOpen}
+        onClose={handleCompleteModalClose}
       />
     </>
   );

@@ -8,7 +8,7 @@ import {
 import Demo from "./demo";
 import { CssBaseline, GlobalStyles } from "@mui/material";
 import { grey } from "@mui/material/colors";
-import { ApplicationContextProvider } from "./ApplicationContext";
+import { ApplicationContextProvider } from "./global/ApplicationContext";
 import { SnackbarProvider } from "notistack";
 import AdapterDateFns from "@mui/lab/AdapterDateFns";
 import LocalizationProvider from "@mui/lab/LocalizationProvider";
