@@ -123,7 +123,7 @@ const OverviewDialog: React.FC<OverviewDialogProps> = (props) => {
       </Dialog>
       <FeedbackDialog
         open={feedbackModalOpen}
-        title="Complete order"
+        title="Confirm order"
         onClose={handleFeedbackCancel}
         actions={
           <>
@@ -135,7 +135,7 @@ const OverviewDialog: React.FC<OverviewDialogProps> = (props) => {
               color="success"
               onClick={handleCompleteQuickOrder}
             >
-              Complete order
+              Confirm
             </Button>
           </>
         }

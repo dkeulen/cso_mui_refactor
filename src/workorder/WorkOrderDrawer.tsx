@@ -2,6 +2,7 @@ import * as React from "react";
 
 import {
   ShoppingBasketOutlined as ShoppingBasket,
+  ContentCopyOutlined as ContentCopy,
   MoreVert,
   ReceiptOutlined,
   OpenInFullOutlined
@@ -20,10 +21,15 @@ import {
   Tooltip
 } from "@mui/material";
 import OverviewDialog from "./OverviewDialog";
+
+import CompleteDialog from "./CompleteDialog";
+import Invoice from "./Invoice";
 import VehicleInfo from "./vehicle/VehicleInfo";
 
 function TotalsInfo() {
   const [modalOpen, setModalOpen] = React.useState(false);
+  const [CompleteModalOpen, setCompleteModalOpen] = React.useState(false);
+  const [invoiceOpen, setInvoiceOpen] = React.useState(false);
 
   const handleModalOpen = () => {
     setModalOpen(true);
@@ -31,6 +37,27 @@ function TotalsInfo() {
 
   const handleModalClose = () => {
     setModalOpen(false);
+  };
+
+  const handleCompleteModalOpen = () => {
+    setCompleteModalOpen(true);
+  };
+
+  const handleCompleteModalClose = () => {
+    setCompleteModalOpen(false);
+  };
+
+  const handleOverviewToCompleteModal = () => {
+    setModalOpen(false);
+    setCompleteModalOpen(true);
+  };
+
+  const handleInvoiceOpen = () => {
+    setInvoiceOpen(true);
+  };
+
+  const handleInvoiceClose = () => {
+    setInvoiceOpen(false);
   };
 
   return (
@@ -54,6 +81,7 @@ function TotalsInfo() {
             startIcon={<ShoppingBasket />}
             variant="contained"
             sx={{ mb: 1 }}
+            onClick={handleCompleteModalOpen}
           >
             Order parts
             <Chip color="secondary" label="1" size="small" sx={{ ml: 1 }} />
@@ -67,12 +95,22 @@ function TotalsInfo() {
             startIcon={<ReceiptOutlined />}
             variant="contained"
             sx={{ mt: 1 }}
+            onClick={handleInvoiceOpen}
           >
             Invoice
           </Button>
         </CardContent>
       </Card>
-
+      <OverviewDialog
+        open={modalOpen}
+        onClose={handleModalClose}
+        actionTwo={handleOverviewToCompleteModal}
+      />
+      <CompleteDialog
+        open={CompleteModalOpen}
+        onClose={handleCompleteModalClose}
+      />
+      <Invoice open={invoiceOpen} onClose={handleInvoiceClose} />
       <OverviewDialog open={modalOpen} onClose={handleModalClose} />
     </>
   );
@@ -108,7 +146,7 @@ function AccountInfo() {
   );
 }
 
-export default function RightSideDrawer() {
+export default function WorkOrderDrawer() {
   return (
     <Box sx={{ p: 2, width: 400 }}>
       <Box sx={{ mb: 2 }}>
