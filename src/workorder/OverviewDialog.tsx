@@ -17,7 +17,7 @@ import {
 import DeleteForeverIcon from "@mui/icons-material/DeleteForever";
 import CloseIcon from "@mui/icons-material/Close";
 import { useSnackbar } from "notistack";
-import FeedbackDialog from "../global/shared/FeedbackDialog";
+import FeedbackDialog from "../global/shared/ui/FeedbackDialog";
 
 interface OverviewDialogProps {
   onClose: () => void;

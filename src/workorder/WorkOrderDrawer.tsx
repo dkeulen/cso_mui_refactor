@@ -2,7 +2,6 @@ import * as React from "react";
 
 import {
   ShoppingBasketOutlined as ShoppingBasket,
-  ContentCopyOutlined as ContentCopy,
   MoreVert,
   ReceiptOutlined,
   OpenInFullOutlined

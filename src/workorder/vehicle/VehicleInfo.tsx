@@ -1,7 +1,6 @@
 import React from "react";
 import {
   MoreVert,
-  ContentCopy,
   DeleteOutline,
   Edit,
   AddLink,
@@ -30,9 +29,9 @@ import {
   Grid,
   Badge
 } from "@mui/material";
-import OptionDialog from "../../ui/OptionDialog";
-import ConfirmationDialog from "../../ui/ConfirmationDialog";
-import TypographyCopy from "../../ui/TypographyCopy";
+import OptionDialog from "../../global/shared/ui/OptionDialog";
+import ConfirmationDialog from "../../global/shared/ui/ConfirmationDialog";
+import TypographyCopy from "../../global/shared/ui/TypographyCopy";
 
 const INFO = {
   title: "Vehicle information",
