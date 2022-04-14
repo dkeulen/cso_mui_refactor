@@ -101,7 +101,12 @@ const Invoice: React.FC<InvoiceProps> = (props) => {
                   setInvoiceDate(newValue);
                 }}
                 renderInput={(params) => (
-                  <TextField fullWidth {...params} sx={{ mb: 2 }} />
+                  <TextField
+                    size="small"
+                    fullWidth
+                    {...params}
+                    sx={{ mb: 2 }}
+                  />
                 )}
               />
               <FormControl fullWidth>
@@ -113,6 +118,7 @@ const Invoice: React.FC<InvoiceProps> = (props) => {
                   label="Closing statement"
                   value={closingStatement}
                   onChange={handleClosingStatement}
+                  size="small"
                   sx={{ mb: 2 }}
                 >
                   <MenuItem value="default">Default closing statement</MenuItem>
@@ -126,7 +132,12 @@ const Invoice: React.FC<InvoiceProps> = (props) => {
                   setMOTDate(newValue);
                 }}
                 renderInput={(params) => (
-                  <TextField fullWidth {...params} sx={{ mb: 2 }} />
+                  <TextField
+                    size="small"
+                    fullWidth
+                    {...params}
+                    sx={{ mb: 2 }}
+                  />
                 )}
               />
               <Alert severity="warning">

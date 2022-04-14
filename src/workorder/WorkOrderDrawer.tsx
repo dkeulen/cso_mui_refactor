@@ -120,7 +120,6 @@ function TotalsInfo() {
         onClose={handleCompleteModalClose}
       />
       <Invoice open={invoiceOpen} onClose={handleInvoiceClose} />
-      <OverviewDialog open={modalOpen} onClose={handleModalClose} />
     </>
   );
 }
